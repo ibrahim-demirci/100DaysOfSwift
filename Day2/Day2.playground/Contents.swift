@@ -22,3 +22,12 @@ name.1
 name.first
 name.first = "Taylor New"
 // Error: name.first = 35
+
+
+/// Dictionaries
+let heights = [
+    "Taylor Swift": 1.78,
+    "Ed Sheeran": 1.73
+]
+heights["Taylor Swift"]
+;
