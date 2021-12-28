@@ -1,4 +1,5 @@
 import UIKit
+import Foundation
 
 
 /// 1.  Arrays
@@ -70,4 +71,13 @@ enum Activity {
 
 let talking = Activity.talking(topic: "Football")
 
-///
+/// 5.2 Enum Raw Values
+
+enum Planet: Int {
+    case mercury
+    case venus
+    case earth
+    case mars
+}
+
+let earth = Planet(rawValue: 2)
