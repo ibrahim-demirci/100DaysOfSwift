@@ -22,3 +22,9 @@ This goes\
 over multiple\
 lines
 """
+
+/// Double and Boolean
+var pi = 3.141
+
+var awesome = true
+
