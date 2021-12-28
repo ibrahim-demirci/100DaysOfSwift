@@ -51,3 +51,10 @@ var numbers = Set<Int>()
 
 var scores = Dictionary<String, Int>()
 
+/// Enumerations
+enum Result {
+    case success
+    case failure
+}
+
+let result = Result.failure
