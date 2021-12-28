@@ -1,7 +1,7 @@
 import UIKit
 
 
-/// Arrays
+/// 1.  Arrays
 let john = "John Lennon"
 let paul = "Paul McCartney"
 let george = "George Harrison"
@@ -11,12 +11,12 @@ let beatles = [john, paul, george, ringo]
 
 beatles[1]
 
-/// Sets
+/// 2. Sets
 let colors = Set(["red", "green", "blue"])
 let colors2 = Set(["red", "green", "blue", "red"])
 
 
-/// Tuples
+/// 3. Tuples
 var name = (first: "Taylor", last: "Swift")
 name.1
 name.first
@@ -24,15 +24,15 @@ name.first = "Taylor New"
 // Error: name.first = 35
 
 
-/// Dictionaries
+/// 3. Dictionaries
 let heights = [
     "Taylor Swift": 1.78,
     "Ed Sheeran": 1.73
 ]
 heights["Taylor Swift"]
 
-/// Default Values on Dictionaries
 
+/// 3.1 Default Values on Dictionaries
 let favoriteIceCream = [
     "Paul": "Chocolate",
     "Sophie": "Vanilla"
@@ -40,7 +40,8 @@ let favoriteIceCream = [
 favoriteIceCream["Paul"]
 favoriteIceCream["Charlotte", default: "Unknown"]
 
-/// Creating Empty Collections
+
+/// 4. Creating Empty Collections
 var teams = [String: String]()
 teams["Paul"] = "Red"
 
@@ -51,10 +52,22 @@ var numbers = Set<Int>()
 
 var scores = Dictionary<String, Int>()
 
-/// Enumerations
+
+/// 5. Enumerations
 enum Result {
     case success
     case failure
 }
-
 let result = Result.failure
+
+/// 5.1 Enum Associated Values
+enum Activity {
+    case bored
+    case running(destination: String)
+    case talking(topic: String)
+    case singing(volume: Int)
+}
+
+let talking = Activity.talking(topic: "Football")
+
+///
