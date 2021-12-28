@@ -39,3 +39,15 @@ let favoriteIceCream = [
 ]
 favoriteIceCream["Paul"]
 favoriteIceCream["Charlotte", default: "Unknown"]
+
+/// Creating Empty Collections
+var teams = [String: String]()
+teams["Paul"] = "Red"
+
+var results = [Int]()
+
+var words = Set<String>()
+var numbers = Set<Int>()
+
+var scores = Dictionary<String, Int>()
+
