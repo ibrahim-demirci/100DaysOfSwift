@@ -25,6 +25,13 @@ lines
 
 /// Double and Boolean
 var pi = 3.141
-
 var awesome = true
+
+/// String Interpolation
+var score = 85
+var str = "Your score was \(score)"
+var result = "The test result are here: \(str)"
+
+/// Constants
+let taylor = "swift"
 
