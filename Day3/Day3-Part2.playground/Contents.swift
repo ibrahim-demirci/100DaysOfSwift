@@ -33,3 +33,20 @@ let firstItem = 11
 let secondItem = 12
 
 print(firstItem == secondItem ? "Cards are the same" : "Cards are different")
+
+
+/// Switch - Case
+
+let weather = "sunny"
+
+switch weather {
+case "rain":
+    print("Bring an umbrella")
+case "snow":
+    print("Wrap up warm")
+case "sunny":
+    print("Wear sunscreen")
+    fallthrough
+default:
+    print("Enjoy your day!")
+}
