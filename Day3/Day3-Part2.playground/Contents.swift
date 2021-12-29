@@ -26,3 +26,10 @@ if age1 > 18 && age2 > 18 {
 if age1 > 18 || age2 > 18 {
     print("One of them is over 18")
 }
+
+/// The Ternary Operator
+
+let firstItem = 11
+let secondItem = 12
+
+print(firstItem == secondItem ? "Cards are the same" : "Cards are different")
