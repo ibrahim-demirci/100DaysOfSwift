@@ -34,3 +34,16 @@ score -= 5
 var quote = "The rain is Spain falls mainly on the "
 quote += "Spainards"
 
+
+/// Comparison Operators
+
+let firstNum = 6
+let secondNum = 4
+
+firstNum == secondNum
+firstNum != secondNum
+
+firstNum < secondNum
+firstNum >= secondNum
+
+"Taylor" <= "Swift"
