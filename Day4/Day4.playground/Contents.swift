@@ -15,3 +15,11 @@ for _ in 1...5 {
     print("Play")
 }
 
+/// While Loop
+var num = 1
+
+while num <= 20 {
+    print(num)
+    num += 1
+}
+print("Ready or not, here I came!")
