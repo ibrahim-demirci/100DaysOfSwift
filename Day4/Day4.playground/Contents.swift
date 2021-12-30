@@ -23,3 +23,21 @@ while num <= 20 {
     num += 1
 }
 print("Ready or not, here I came!")
+
+/// Repeat Loops
+var number = 1
+repeat {
+    print(number)
+    number += 1
+} while number <= 20
+
+print("Ready or not, here I came!")
+
+while false {
+    print("This is false")
+}
+
+repeat {
+    print("This is false")
+} while false
+
