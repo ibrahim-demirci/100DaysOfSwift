@@ -15,3 +15,9 @@ MyApp will resize them all into thumbnails
 }
 
 printHelp()
+
+
+func square(number: Int) {
+    print(number * number)
+}
+square(number: 5)
