@@ -2,7 +2,7 @@ import UIKit
 
 var greeting = "Hello, playground"
 
-
+/// Writing Functions
 func printHelp() {
     let message = """
 Welcome to MyApp!
@@ -13,17 +13,26 @@ MyApp will resize them all into thumbnails
     
     print(message)
 }
-
 printHelp()
 
 
+/// Accepting Parameters
 func square(number: Int) {
     print(number * number)
 }
 square(number: 5)
 
+
+/// Returnin Values
 func squareReturn(number: Int) -> Int {
     return number * number
 }
 let resultSquare = squareReturn(number: 3)
 print(resultSquare)
+
+
+/// Parameter Labels
+func sayHello(to name: String) {
+    print("Hello \(name)")
+}
+sayHello(to: "George")
