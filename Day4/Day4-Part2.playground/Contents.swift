@@ -1,7 +1,5 @@
 import UIKit
 
-var greeting = "Hello, playground"
-
 
 /// Exiting Loops
 var countDown = 10
@@ -34,6 +32,5 @@ for i in 1...10 {
     if i % 2 == 1 {
         continue
     }
-    
     print(i)
 }
