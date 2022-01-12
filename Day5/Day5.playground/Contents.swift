@@ -1,4 +1,5 @@
 import UIKit
+import Darwin
 
 var greeting = "Hello, playground"
 
@@ -37,8 +38,23 @@ func sayHello(to name: String) {
 }
 sayHello(to: "George")
 
+
 /// Omitting Function Parameters
 func greet(_ person: String) {
     print("Hello \(person)")
 }
 greet("Json")
+
+
+/// Default Parameters
+func greetWithDefault(_ person: String, nicely: Bool = true) {
+    if nicely {
+        print("Hello \(person)!")
+    } else {
+        print("Oh no, it's \(person) again...")
+    }
+    
+}
+
+greetWithDefault("Taylor")
+greetWithDefault("Taylor", nicely: false)
