@@ -58,3 +58,12 @@ func greetWithDefault(_ person: String, nicely: Bool = true) {
 
 greetWithDefault("Taylor")
 greetWithDefault("Taylor", nicely: false)
+
+
+/// Variadic Functions
+func variadicSquare(numbers: Int...) {
+    for number in numbers {
+        print("\(number) squared is \(number * number)")
+    }
+}
+variadicSquare(numbers: 1,2,3,4,5)
