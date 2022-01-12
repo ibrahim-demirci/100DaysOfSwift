@@ -36,3 +36,9 @@ func sayHello(to name: String) {
     print("Hello \(name)")
 }
 sayHello(to: "George")
+
+/// Omitting Function Parameters
+func greet(_ person: String) {
+    print("Hello \(person)")
+}
+greet("Json")
