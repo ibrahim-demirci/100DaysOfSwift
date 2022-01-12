@@ -20,3 +20,13 @@ do {
 } catch {
     print("You can't use this password.")
 }
+
+
+/// In Out Parameters
+func doubleInPlace(number: inout Int) {
+    number *= 2
+}
+
+var myNum = 10
+doubleInPlace(number: &myNum)
+print(myNum)
