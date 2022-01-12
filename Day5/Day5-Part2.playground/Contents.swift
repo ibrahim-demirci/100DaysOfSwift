@@ -12,4 +12,11 @@ func checkPassword(_ password: String) throws -> Bool {
     
     return true
 }
-checkPassword("password")
+
+/// Running Throwing Functions
+do {
+    try checkPassword("password")
+    print("That password is good")
+} catch {
+    print("You can't use this password.")
+}
