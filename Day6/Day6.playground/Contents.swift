@@ -4,5 +4,11 @@ import UIKit
 let driving = {
     print("I'm driving in my car")
 }
-
 driving()
+
+
+/// Accepting Parameters
+let drivingParameter = { (place: String) in
+    print("I'm goint to \(place) in my car")
+}
+drivingParameter("London")
