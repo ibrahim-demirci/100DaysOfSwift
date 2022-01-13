@@ -28,3 +28,9 @@ func travel(action: () -> Void) {
     print("I arrived!")
 }
 travel(action: driving)
+
+
+/// Trailing Closure Syntax
+travel {
+    print("I'm driving in my Truck")
+}
