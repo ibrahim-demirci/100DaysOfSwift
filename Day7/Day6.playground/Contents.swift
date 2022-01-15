@@ -49,5 +49,22 @@ func travelReturnClosure() -> (String) -> Void {
 }
 let result = travelReturnClosure()
 result("London")
-
 let result2 = travelReturnClosure()("London")
+
+
+/// Capturing Values
+func travelCapture() -> (String) -> Void {
+    var counter = 1
+    return {
+        
+        print("\(counter). I'm going to \($0)")
+        counter+=1
+    }
+}
+let resultCapture = travelCapture()
+resultCapture("London")
+resultCapture("London")
+resultCapture("London")
+resultCapture("London")
+resultCapture("London")
+
