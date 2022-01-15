@@ -27,3 +27,15 @@ travelWithReturn{ (place: String) in
 travelWithReturn {
     "I'm going to \($0) in my car"
 }
+
+
+/// Closures With Multiple Parameters
+func travelWithSpeed(action: (String, Int) -> String) {
+    print("I'm getting ready to go.")
+    let describtion = action("London", 60)
+    print(describtion)
+    print("I arrived")
+}
+travelWithSpeed {
+    "I'm going to \($0) at \($1) miles an hour"
+}
