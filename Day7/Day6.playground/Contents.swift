@@ -11,4 +11,13 @@ travel { (place: String) in
 }
 
 
-
+/// Using Closures As Parameters When They Return Values
+func travelWithReturn(action: (String) -> String) {
+    print("I'm getting ready to go.")
+    let describtion = action("London")
+    print(describtion)
+    print("I arrived")
+}
+travelWithReturn{ (place: String) in
+    return "I'm going to \(place) in my car"
+}
