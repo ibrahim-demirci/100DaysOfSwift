@@ -39,3 +39,15 @@ func travelWithSpeed(action: (String, Int) -> String) {
 travelWithSpeed {
     "I'm going to \($0) at \($1) miles an hour"
 }
+
+
+/// Returning Closures from Functions
+func travelReturnClosure() -> (String) -> Void {
+    return {
+        print("I'm going to \($0)")
+    }
+}
+let result = travelReturnClosure()
+result("London")
+
+let result2 = travelReturnClosure()("London")
