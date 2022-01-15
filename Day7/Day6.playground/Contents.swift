@@ -21,3 +21,9 @@ func travelWithReturn(action: (String) -> String) {
 travelWithReturn{ (place: String) in
     return "I'm going to \(place) in my car"
 }
+
+
+/// Shorthand Paraneter Names
+travelWithReturn {
+    "I'm going to \($0) in my car"
+}
