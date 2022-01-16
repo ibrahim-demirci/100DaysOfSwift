@@ -28,3 +28,18 @@ struct SportComputed {
 let chessBoxing = SportComputed(name: "Chessboxing", isOlympicSport: false)
 print(chessBoxing.olympicStatus)
 
+
+/// Property Observers
+struct Progress {
+    var task: String
+    var amount: Int {
+        didSet {
+            print("\(task) is now \(amount)% completed")
+        }
+    }
+    
+}
+var progress = Progress(task: "Loading data", amount: 0)
+progress.amount = 30
+progress.amount = 50
+progress.amount = 80
