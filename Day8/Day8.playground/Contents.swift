@@ -55,3 +55,15 @@ struct City {
 }
 let london = City(population: 9_000_000)
 london.collectTaxes()
+
+
+/// Mutating Methods
+struct Person {
+    var name: String
+
+    mutating func makeAnonymous() {
+        name = "Anonymous"
+    }
+}
+var person = Person(name: "Ed")
+person.makeAnonymous()
