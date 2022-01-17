@@ -41,3 +41,18 @@ struct Member {
 }
 var ed = Member(name: "Ed")
 ed.familyTree
+
+
+/// Static Properties and Methods
+struct Student {
+    static var classSize = 0
+    var name: String
+
+    init(name: String) {
+        self.name = name
+        Student.classSize += 1
+    }
+}
+let eddo = Student(name: "Ed")
+let taylor = Student(name: "Taylor")
+print(Student.classSize)
