@@ -11,3 +11,11 @@ class Dog {
     }
 }
 let poppy = Dog(name: "Poppy", breed: "Poodle")
+
+
+/// Class Inheritance
+class Poodle: Dog {
+    init(name: String) {
+        super.init(name: name, breed: "Poodle")
+    }
+}
