@@ -35,3 +35,9 @@ class Pinny: Dog {
         print("Yip!")
     }
 }
+
+
+/// Final Classes
+final class SampleClass {
+    
+}
