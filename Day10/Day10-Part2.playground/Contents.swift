@@ -30,3 +30,9 @@ class Person {
 for _ in 1...3 {
     let person = Person()
 }
+
+
+/// Mutability
+let taylor = Singer()
+taylor.name = "Ed Sheeran"
+print(taylor.name)
