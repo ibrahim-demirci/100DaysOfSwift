@@ -27,3 +27,18 @@ protocol HasVacation {
 }
 protocol Employee: Payable, NeedsTraining, HasVacation { }
 
+
+/// Extensions
+extension Int {
+    func squared() -> Int {
+        return self * self
+    }
+}
+8.squared()
+
+extension Int {
+    var isEven: Bool {
+        return self % 2 == 0
+    }
+}
+
