@@ -50,3 +50,21 @@ var user = username(for: 15) ?? "Anonymous"
 /// Optional Chaining
 let names = ["John", "Paul", "George", "Ringo"]
 let beatle = names.first?.uppercased()
+
+
+/// Optional Try
+enum PasswordError: Error {
+    case obvious
+}
+func checkPassword(_ password: String) throws -> Bool {
+    if password == "password" {
+        throw PasswordError.obvious
+    }
+
+    return true
+}
+if let result = try? checkPassword("password") {
+    print("Result was \(result)")
+} else {
+    print("D'oh.")
+}
