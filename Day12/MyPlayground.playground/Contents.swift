@@ -32,3 +32,8 @@ let str = "5"
 let num = Int(str)!
 
 
+/// Implicitly Unwrapped Optionals
+let age: Int! = nil
+
+
+
