@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="DDF-E7-QdV">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
@@ -21,15 +21,13 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" image="us"/>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kVr-Yu-v7n">
-                                <rect key="frame" x="107" y="360" width="200" height="100"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kVr-Yu-v7n">
+                                <rect key="frame" x="95" y="388" width="224" height="114"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" image="us"/>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d2b-g3-AHF">
-                                <rect key="frame" x="107" y="230" width="200" height="100"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d2b-g3-AHF">
+                                <rect key="frame" x="95" y="244" width="224" height="114"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" image="us"/>
                             </button>
@@ -37,8 +35,12 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="6zX-1K-KGo" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="68k-9k-OUD"/>
-                            <constraint firstItem="6zX-1K-KGo" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="12" id="lLG-BD-q1X"/>
+                            <constraint firstItem="kVr-Yu-v7n" firstAttribute="top" secondItem="d2b-g3-AHF" secondAttribute="bottom" constant="30" id="7sF-Dp-Pvt"/>
+                            <constraint firstItem="kVr-Yu-v7n" firstAttribute="centerX" secondItem="d2b-g3-AHF" secondAttribute="centerX" id="Inh-89-mUx"/>
+                            <constraint firstItem="d2b-g3-AHF" firstAttribute="centerX" secondItem="6zX-1K-KGo" secondAttribute="centerX" id="QyH-Fz-4Do"/>
+                            <constraint firstItem="6zX-1K-KGo" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="jyA-16-og3"/>
+                            <constraint firstItem="d2b-g3-AHF" firstAttribute="top" secondItem="6zX-1K-KGo" secondAttribute="bottom" constant="30" id="lLG-28-tuf"/>
+                            <constraint firstItem="6zX-1K-KGo" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="12" id="nC7-w4-RhV"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Uci-Qy-RbT"/>
