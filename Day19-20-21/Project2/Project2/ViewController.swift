@@ -33,6 +33,13 @@ class ViewController: UIViewController {
     }
     
     func askQuestion(action: UIAlertAction!) {
+        if askedQuestions == 2 {
+            button1.isEnabled = false
+            button2.isEnabled = false
+            button3.isEnabled = false
+            presentFinalAlert()
+            return
+        }
         askedQuestions += 1
         countries.shuffle()
         button1.setImage(UIImage(named: countries[0]), for: .normal)
@@ -44,27 +51,35 @@ class ViewController: UIViewController {
     }
     
     @IBAction func buttonTapped(_ sender: UIButton) {
-        var title: String
         if sender.tag == correctAnswer {
-            title = "Correct"
             score += 1
+            presentCorrectAlert()
+            
         } else {
-            title = "Wrong"
             score -= 1
+            presentWrongAlert(tag: sender.tag)
+            
         }
+    }
+    
+    
+    func presentFinalAlert() {
         
-        if askedQuestions == 10 {
-            let ac = UIAlertController(title: title, message: "Final Score is \(score).", preferredStyle: .alert)
-            ac.addAction(UIAlertAction(title: "Finish", style: .default, handler: nil))
-            present(ac, animated: true)
-        }
-        else {
-            let ac = UIAlertController(title: title, message: "Your score is \(score).", preferredStyle: .alert)
-            ac.addAction(UIAlertAction(title: "Continue", style: .default, handler: askQuestion))
-            present(ac, animated: true)
-        }
-        
-      
+        let ac = UIAlertController(title: "Final", message: "Final Score is \(score).", preferredStyle: .alert)
+        ac.addAction(UIAlertAction(title: "Finish", style: .default, handler: nil))
+        present(ac, animated: true)
+    }
+
+    func presentWrongAlert(tag: Int){
+        let ac = UIAlertController(title: "Wrong", message: "Wrong! That's  \(countries[tag]).", preferredStyle: .alert)
+        ac.addAction(UIAlertAction(title: "Continue", style: .default, handler: askQuestion))
+        present(ac, animated: true)
+    }
+    
+    func presentCorrectAlert(){
+        let ac = UIAlertController(title: "Correct", message: "Your score is \(score).", preferredStyle: .alert)
+        ac.addAction(UIAlertAction(title: "Continue", style: .default, handler: askQuestion))
+        present(ac, animated: true)
     }
     
 
