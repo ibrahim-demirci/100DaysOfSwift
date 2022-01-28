@@ -16,7 +16,6 @@ class DetailViewController: UIViewController {
         super.viewDidLoad()
         title = selectedImage
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .action, target: self, action: #selector(shareTapped))
-
         navigationItem.largeTitleDisplayMode = .never
         if let imageToLoad = selectedImage {
             imageView.image  = UIImage(named: imageToLoad)

@@ -11,8 +11,11 @@ class ViewController: UITableViewController {
     
     var countries = [String]()
     override func viewDidLoad() {
+        
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        title = "Flags"
+        navigationController?.navigationBar.prefersLargeTitles = true
         countries += ["estonia", "france", "germany", "ireland", "italy", "monaco",
                       "nigeria", "poland", "russia", "spain", "uk", "us"]
     }
