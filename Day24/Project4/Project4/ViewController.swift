@@ -35,9 +35,10 @@ class ViewController: UIViewController, WKNavigationDelegate {
         let refresh = UIBarButtonItem(barButtonSystemItem: .refresh, target: webView, action: #selector(webView.reload))
         
         // Back and Forward button
-        let back = UIBarButtonItem(title: "Back", style: .plain, target: webView, action: #selector(webView.goBack))
+        let backButton = UIBarButtonItem(title: "Back", style: .plain, target: webView, action: #selector(webView.goBack))
+        let forwardButton = UIBarButtonItem(title: "Forward", style: .plain, target: webView, action: #selector(webView.goForward))
         
-        toolbarItems = [progressButton,spacer, refresh,back]
+        toolbarItems = [progressButton,spacer, backButton,forwardButton, refresh]
         navigationController?.isToolbarHidden = false
         
         let url = URL(string: "https://" + websites[0])!
