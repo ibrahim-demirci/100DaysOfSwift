@@ -34,7 +34,10 @@ class ViewController: UIViewController, WKNavigationDelegate {
         let spacer = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
         let refresh = UIBarButtonItem(barButtonSystemItem: .refresh, target: webView, action: #selector(webView.reload))
         
-        toolbarItems = [progressButton,spacer, refresh]
+        // Back and Forward button
+        let back = UIBarButtonItem(title: "Back", style: .plain, target: webView, action: #selector(webView.goBack))
+        
+        toolbarItems = [progressButton,spacer, refresh,back]
         navigationController?.isToolbarHidden = false
         
         let url = URL(string: "https://" + websites[0])!
