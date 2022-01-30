@@ -85,8 +85,11 @@ class ViewController: UIViewController, WKNavigationDelegate {
                 }
             }
         }
-
+        let alert = UIAlertController(title: "Blocked!", message: "This website blocked from app \(url?.host ?? "")", preferredStyle: .alert)
         decisionHandler(.cancel)
+        let cancel = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        alert.addAction(cancel)
+        present(alert, animated: true, completion: nil)
     }
 
 
