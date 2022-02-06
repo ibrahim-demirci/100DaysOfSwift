@@ -61,29 +61,42 @@ class ViewController: UITableViewController {
 
         let errorTitle: String
         let errorMessage: String
+        
+        
+        if isLonger(word: lowerAnswer){
+            if isPossible(word: lowerAnswer) {
+                if isOriginal(word: lowerAnswer) {
+                    if isReal(word: lowerAnswer) {
+                        if isDifferent(word: lowerAnswer) {
+                            usedWords.insert(answer, at: 0)
 
-        if isPossible(word: lowerAnswer) {
-            if isOriginal(word: lowerAnswer) {
-                if isReal(word: lowerAnswer) {
-                    usedWords.insert(answer, at: 0)
+                            let indexPath = IndexPath(row: 0, section: 0)
+                            tableView.insertRows(at: [indexPath], with: .automatic)
 
-                    let indexPath = IndexPath(row: 0, section: 0)
-                    tableView.insertRows(at: [indexPath], with: .automatic)
-
-                    return
+                            return
+                        } else {
+                            errorTitle = "Same Words"
+                            errorMessage = "Enter different word than the start word!"
+                        }
+                        
+                    } else {
+                        errorTitle = "Word not recognised or shorter 3 letter"
+                        errorMessage = "You can't just make them up, you know!"
+                    }
                 } else {
-                    errorTitle = "Word not recognised or shorter 3 letter"
-                    errorMessage = "You can't just make them up, you know!"
+                    errorTitle = "Word used already"
+                    errorMessage = "Be more original!"
                 }
             } else {
-                errorTitle = "Word used already"
-                errorMessage = "Be more original!"
+                guard let title = title?.lowercased() else { return }
+                errorTitle = "Word not possible"
+                errorMessage = "You can't spell that word from \(title)"
             }
         } else {
-            guard let title = title?.lowercased() else { return }
-            errorTitle = "Word not possible"
-            errorMessage = "You can't spell that word from \(title)"
+            errorTitle = "Word too short"
+            errorMessage = "Enter longer than 3 characters!"
         }
+        
 
         let ac = UIAlertController(title: errorTitle, message: errorMessage, preferredStyle: .alert)
         ac.addAction(UIAlertAction(title: "OK", style: .default))
@@ -107,12 +120,17 @@ class ViewController: UITableViewController {
     func isOriginal(word: String) -> Bool {
         return !usedWords.contains(word)
     }
-
+    
+    func isLonger(word: String) -> Bool{
+        return word.count > 3
+    }
+    
+    func isDifferent(word: String) -> Bool {
+        guard let tempWord = title?.lowercased() else { return false }
+        return word != tempWord
+    }
+    
     func isReal(word: String) -> Bool {
-        
-        if word.count < 3 {
-            return false
-        }
         let checker = UITextChecker()
             let range = NSRange(location: 0, length: word.utf16.count)
             let misspelledRange = checker.rangeOfMisspelledWord(in: word, range: range, startingAt: 0, wrap: false, language: "en")
