@@ -62,15 +62,12 @@ class ViewController: UITableViewController {
     func submit(answer: String) {
         let lowerAnswer = answer.lowercased()
 
-        
-        
-        
         if isLonger(word: lowerAnswer){
             if isPossible(word: lowerAnswer) {
                 if isOriginal(word: lowerAnswer) {
                     if isReal(word: lowerAnswer) {
                         if isDifferent(word: lowerAnswer) {
-                            usedWords.insert(answer, at: 0)
+                            usedWords.insert(lowerAnswer, at: 0)
 
                             let indexPath = IndexPath(row: 0, section: 0)
                             tableView.insertRows(at: [indexPath], with: .automatic)
@@ -82,7 +79,7 @@ class ViewController: UITableViewController {
                         }
                         
                     } else {
-                        showErrorMessage(errorMessage: "You can't just make them up, you know!", errorTitle: "Word not recognised or shorter 3 letter")
+                        showErrorMessage(errorMessage: "You can't just make them up, you know!", errorTitle: "Word not recognised!")
                       
                     }
                     
@@ -121,7 +118,7 @@ class ViewController: UITableViewController {
     }
     
     func isLonger(word: String) -> Bool{
-        return word.count > 3
+        return word.count > 2
     }
     
     func isDifferent(word: String) -> Bool {
