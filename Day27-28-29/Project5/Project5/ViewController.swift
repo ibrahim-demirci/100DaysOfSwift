@@ -59,8 +59,7 @@ class ViewController: UITableViewController {
     func submit(answer: String) {
         let lowerAnswer = answer.lowercased()
 
-        let errorTitle: String
-        let errorMessage: String
+        
         
         
         if isLonger(word: lowerAnswer){
@@ -75,32 +74,29 @@ class ViewController: UITableViewController {
 
                             return
                         } else {
-                            errorTitle = "Same Words"
-                            errorMessage = "Enter different word than the start word!"
+                            showErrorMessage(errorMessage: "Enter different word than the start word!", errorTitle: "Same Words")
+                            
                         }
                         
                     } else {
-                        errorTitle = "Word not recognised or shorter 3 letter"
-                        errorMessage = "You can't just make them up, you know!"
+                        showErrorMessage(errorMessage: "You can't just make them up, you know!", errorTitle: "Word not recognised or shorter 3 letter")
+                      
                     }
+                    
                 } else {
-                    errorTitle = "Word used already"
-                    errorMessage = "Be more original!"
+                    showErrorMessage(errorMessage: "Be more original!", errorTitle: "Word used already")
+                    
                 }
+                
             } else {
                 guard let title = title?.lowercased() else { return }
-                errorTitle = "Word not possible"
-                errorMessage = "You can't spell that word from \(title)"
+                showErrorMessage(errorMessage: "You can't spell that word from \(title)", errorTitle: "Word not possible")
             }
+            
         } else {
-            errorTitle = "Word too short"
-            errorMessage = "Enter longer than 3 characters!"
+            showErrorMessage(errorMessage: "Enter longer than 3 characters!", errorTitle: "Word too short")
         }
         
-
-        let ac = UIAlertController(title: errorTitle, message: errorMessage, preferredStyle: .alert)
-        ac.addAction(UIAlertAction(title: "OK", style: .default))
-        present(ac, animated: true)
     }
     
     func isPossible(word: String) -> Bool {
@@ -136,6 +132,13 @@ class ViewController: UITableViewController {
             let misspelledRange = checker.rangeOfMisspelledWord(in: word, range: range, startingAt: 0, wrap: false, language: "en")
 
             return misspelledRange.location == NSNotFound
+    }
+    
+    func showErrorMessage(errorMessage: String, errorTitle: String) {
+        
+        let ac = UIAlertController(title: errorTitle, message: errorMessage, preferredStyle: .alert)
+        ac.addAction(UIAlertAction(title: "OK", style: .default))
+        present(ac, animated: true)
     }
 
 }
