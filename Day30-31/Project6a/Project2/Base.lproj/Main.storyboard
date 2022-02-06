@@ -17,9 +17,9 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6zX-1K-KGo">
-                                <rect key="frame" x="95" y="100" width="224" height="114"/>
+                                <rect key="frame" x="57" y="100" width="300" height="114"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" secondItem="6zX-1K-KGo" secondAttribute="height" multiplier="112:57" id="3ez-eq-lz7"/>
+                                    <constraint firstAttribute="width" secondItem="6zX-1K-KGo" secondAttribute="height" multiplier="224:85" id="PE4-O3-fsn"/>
                                 </constraints>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" image="us"/>
@@ -28,9 +28,9 @@
                                 </connections>
                             </button>
                             <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kVr-Yu-v7n">
-                                <rect key="frame" x="95" y="388" width="224" height="114"/>
+                                <rect key="frame" x="57" y="388" width="300" height="114"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" secondItem="kVr-Yu-v7n" secondAttribute="height" multiplier="112:57" id="Cdo-CK-7dP"/>
+                                    <constraint firstAttribute="width" secondItem="kVr-Yu-v7n" secondAttribute="height" multiplier="224:85" id="bT4-Kd-849"/>
                                 </constraints>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" image="us"/>
@@ -39,9 +39,9 @@
                                 </connections>
                             </button>
                             <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d2b-g3-AHF">
-                                <rect key="frame" x="95" y="244" width="224" height="114"/>
+                                <rect key="frame" x="58.5" y="244" width="297" height="114"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" secondItem="d2b-g3-AHF" secondAttribute="height" multiplier="112:57" id="XCl-I4-F4C"/>
+                                    <constraint firstAttribute="width" secondItem="d2b-g3-AHF" secondAttribute="height" multiplier="112:43" id="Ymf-Lg-TjD"/>
                                 </constraints>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" image="us"/>
@@ -55,13 +55,13 @@
                         <constraints>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="kVr-Yu-v7n" secondAttribute="bottom" constant="20" id="3Dg-dh-bXn"/>
                             <constraint firstItem="kVr-Yu-v7n" firstAttribute="top" secondItem="d2b-g3-AHF" secondAttribute="bottom" constant="30" id="7sF-Dp-Pvt"/>
+                            <constraint firstItem="kVr-Yu-v7n" firstAttribute="height" secondItem="d2b-g3-AHF" secondAttribute="height" id="8Hm-7h-qp5"/>
                             <constraint firstItem="kVr-Yu-v7n" firstAttribute="centerX" secondItem="d2b-g3-AHF" secondAttribute="centerX" id="Inh-89-mUx"/>
-                            <constraint firstItem="kVr-Yu-v7n" firstAttribute="height" secondItem="d2b-g3-AHF" secondAttribute="height" id="P0Z-bg-edN"/>
+                            <constraint firstItem="d2b-g3-AHF" firstAttribute="height" secondItem="6zX-1K-KGo" secondAttribute="height" id="MlM-z3-8a8"/>
                             <constraint firstItem="d2b-g3-AHF" firstAttribute="centerX" secondItem="6zX-1K-KGo" secondAttribute="centerX" id="QyH-Fz-4Do"/>
                             <constraint firstItem="6zX-1K-KGo" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="jyA-16-og3"/>
                             <constraint firstItem="d2b-g3-AHF" firstAttribute="top" secondItem="6zX-1K-KGo" secondAttribute="bottom" constant="30" id="lLG-28-tuf"/>
                             <constraint firstItem="6zX-1K-KGo" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="12" id="nC7-w4-RhV"/>
-                            <constraint firstItem="d2b-g3-AHF" firstAttribute="height" secondItem="6zX-1K-KGo" secondAttribute="height" id="u7j-1U-fxx"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Uci-Qy-RbT"/>
