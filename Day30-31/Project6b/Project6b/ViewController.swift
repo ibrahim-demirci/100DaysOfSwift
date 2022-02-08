@@ -8,6 +8,7 @@
 import UIKit
 
 class ViewController: UIViewController {
+    let metrics = ["labelHeight": 88]
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -53,11 +54,10 @@ class ViewController: UIViewController {
         for label in viewsDictionary.keys {
             view.addConstraints( NSLayoutConstraint.constraints(withVisualFormat: "H:|[\(label)]|", options: [], metrics: nil, views: viewsDictionary))
         }
-        
-        view.addConstraints( NSLayoutConstraint.constraints(withVisualFormat: "V:|[label1]-[label2]-[label3]-[label4]-[label5]", options: [], metrics: nil, views: viewsDictionary))
 
 
-        
+        view.addConstraints( NSLayoutConstraint.constraints(withVisualFormat: "V:|[label1(labelHeight)]-[label2(labelHeight)]-[label3(labelHeight)]-[label4(labelHeight)]-[label5(labelHeight)]-(>=10)-|", options: [], metrics: metrics, views: viewsDictionary))
+
 
     }
 
