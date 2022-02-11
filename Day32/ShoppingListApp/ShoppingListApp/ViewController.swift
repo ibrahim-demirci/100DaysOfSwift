@@ -17,7 +17,29 @@ class ViewController: UITableViewController {
         // Do any additional setup after loading the view.
         
         let clearButton = UIBarButtonItem(title: "Clear", style: .plain, target: self, action: #selector(clearShoppingList))
+        let addButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(promptForInput))
+        
         navigationItem.leftBarButtonItem = clearButton
+        navigationItem.rightBarButtonItem = addButton
+    }
+    
+    func addItemToList(item: String) {
+        let indexPath = IndexPath(row: 0, section: 0)
+        shoppingList.insert(item, at: 0)
+        tableView.insertRows(at: [indexPath], with: .automatic)
+        
+    }
+    
+    @objc func promptForInput() {
+        let ac = UIAlertController(title: "Enter Item", message: nil, preferredStyle: .alert)
+        ac.addTextField()
+
+        let submitAction = UIAlertAction(title: "Add", style: .default) { [weak self, weak ac] action in
+            guard let input = ac?.textFields?[0].text else { return }
+            self?.addItemToList(item: input)
+        }
+        ac.addAction(submitAction)
+        present(ac, animated: true)
     }
     
     @objc func clearShoppingList() {
