@@ -15,11 +15,21 @@ class ViewController: UITableViewController {
         super.viewDidLoad()
         title = "Shopping List"
         // Do any additional setup after loading the view.
+        
+        let clearButton = UIBarButtonItem(title: "Clear", style: .plain, target: self, action: #selector(clearShoppingList))
+        navigationItem.leftBarButtonItem = clearButton
+    }
+    
+    @objc func clearShoppingList() {
+        shoppingList.removeAll(keepingCapacity: true)
+        tableView.reloadData()
     }
 
     
 }
 
+
+// TableView Overrides
 extension ViewController {
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
