@@ -18,9 +18,10 @@ class ViewController: UITableViewController {
         
         let clearButton = UIBarButtonItem(title: "Clear", style: .plain, target: self, action: #selector(clearShoppingList))
         let addButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(promptForInput))
+        let shareButton = UIBarButtonItem(barButtonSystemItem: .action, target: self, action: #selector(shareList))
         
         navigationItem.leftBarButtonItem = clearButton
-        navigationItem.rightBarButtonItem = addButton
+        navigationItem.rightBarButtonItems = [shareButton,addButton]
     }
     
     func addItemToList(item: String) {
@@ -28,6 +29,14 @@ class ViewController: UITableViewController {
         shoppingList.insert(item, at: 0)
         tableView.insertRows(at: [indexPath], with: .automatic)
         
+    }
+    
+    @objc func shareList() {
+        let list = shoppingList.joined(separator: "\n")
+        let ac = UIActivityViewController(activityItems: [list], applicationActivities: nil)
+        
+        ac.popoverPresentationController?.barButtonItem = navigationItem.rightBarButtonItem
+        present(ac,animated: true)
     }
     
     @objc func promptForInput() {
