@@ -37,8 +37,6 @@ class DetailViewController: UIViewController {
         webView = WKWebView()
         view = webView
     }
-    
-
 
 
 }
