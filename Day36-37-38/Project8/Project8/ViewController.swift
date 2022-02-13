@@ -114,7 +114,7 @@ class ViewController: UIViewController {
         
         cluesLabel.text = clueString.trimmingCharacters(in: .whitespacesAndNewlines)
         answersLabel.text = solutionString.trimmingCharacters(in: .whitespacesAndNewlines)
-        
+        letterBits.shuffle()
         if letterBits.count == letterButtons.count {
             for i in 0 ..< letterButtons.count {
                 letterButtons[i].setTitle(letterBits[i], for: .normal)
