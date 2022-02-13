@@ -225,6 +225,8 @@ class ViewController: UIViewController {
                 // calculate the frame of this button using its column and row
                 let frame = CGRect(x: col * width, y: row * height, width: width, height: height)
                 letterButton.frame = frame
+                letterButton.layer.borderColor = UIColor.lightGray.cgColor
+                letterButton.layer.borderWidth = 1
 
                 // add it to the buttons view
                 buttonsView.addSubview(letterButton)
