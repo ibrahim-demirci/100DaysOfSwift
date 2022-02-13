@@ -13,6 +13,7 @@
 		0A56ED6727B86864000CD137 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0A56ED6527B86864000CD137 /* Main.storyboard */; };
 		0A56ED6927B86865000CD137 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0A56ED6827B86865000CD137 /* Assets.xcassets */; };
 		0A56ED6C27B86865000CD137 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0A56ED6A27B86865000CD137 /* LaunchScreen.storyboard */; };
+		0A56ED7427B9325E000CD137 /* level1.txt in Resources */ = {isa = PBXBuildFile; fileRef = 0A56ED7327B9325E000CD137 /* level1.txt */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		0A56ED6827B86865000CD137 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0A56ED6B27B86865000CD137 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0A56ED6D27B86865000CD137 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0A56ED7327B9325E000CD137 /* level1.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = level1.txt; path = ../../../level1.txt; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +65,7 @@
 				0A56ED6827B86865000CD137 /* Assets.xcassets */,
 				0A56ED6A27B86865000CD137 /* LaunchScreen.storyboard */,
 				0A56ED6D27B86865000CD137 /* Info.plist */,
+				0A56ED7327B9325E000CD137 /* level1.txt */,
 			);
 			path = Project8;
 			sourceTree = "<group>";
@@ -126,6 +129,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0A56ED6C27B86865000CD137 /* LaunchScreen.storyboard in Resources */,
+				0A56ED7427B9325E000CD137 /* level1.txt in Resources */,
 				0A56ED6927B86865000CD137 /* Assets.xcassets in Resources */,
 				0A56ED6727B86864000CD137 /* Main.storyboard in Resources */,
 			);
