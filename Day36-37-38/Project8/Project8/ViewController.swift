@@ -57,6 +57,11 @@ class ViewController: UIViewController {
                     ac.addAction(UIAlertAction(title: "Let's go!", style: .default, handler: levelUp))
                     present(ac, animated: true)
                 }
+            } else {
+                let ac = UIAlertController(title: "Wrong", message: "There is no matches!", preferredStyle: .alert)
+                let ok = UIAlertAction(title: "OK", style: .default, handler: nil)
+                ac.addAction(ok)
+                present(ac, animated: true)
             }
     }
     
