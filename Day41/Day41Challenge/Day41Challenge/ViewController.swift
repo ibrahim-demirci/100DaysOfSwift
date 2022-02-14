@@ -9,11 +9,45 @@ import UIKit
 
 class ViewController: UIViewController {
     
+    
+    var healtLabel: UILabel!
+    
+    
     var allWords = [String]()
     var selectedWord: String? = ""
     var selectedCharacters = [Character]()
-   
+    var usedCharacters = [Character]()
+    var healt = 7 {
+        didSet {
+            healtLabel.text = "Healt: \(healt)"
+        }
+    }
+
     
+    override func loadView() {
+        
+        view = UIView()
+        view.backgroundColor = .white
+        
+        healtLabel = UILabel()
+        healtLabel.translatesAutoresizingMaskIntoConstraints = false
+        healtLabel.textAlignment = .center
+        healtLabel.text = "Healt: \(healt)"
+        view.addSubview(healtLabel)
+        
+        NSLayoutConstraint.activate([
+            
+            healtLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            healtLabel.centerYAnchor.constraint(equalTo: view.centerYAnchor),
+            healtLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            healtLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor)
+            
+        
+        
+        ])
+        
+        
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,18 +78,32 @@ class ViewController: UIViewController {
     
     func submit(_ letter: String) {
         var promptWord = ""
+        var findCount = 0
         
         let str = Character(letter.capitalized)
         
+        if usedCharacters.contains(str) {
+            return
+        }
+        
         for character in selectedCharacters {
             if str == character {
+                findCount += 1
                 promptWord += letter
+                usedCharacters.append(character)
             } else {
                 promptWord += "?"
             }
         }
-        title = promptWord
-        print(promptWord)
+        
+        if findCount > 0 {
+            healt += findCount
+            title = promptWord
+            print(promptWord)
+        } else {
+            healt -= 1
+        }
+        
         
     }
     
@@ -77,9 +125,9 @@ class ViewController: UIViewController {
     
     func startGame() {
         selectedWord = allWords.randomElement()
-        print(selectedWord)
         if let selectedWord = selectedWord {
             title = String(repeating: "?", count: selectedWord.count)
+            print(selectedWord)
             selectedCharacters = selectedWord.charactersArray
         }
         
