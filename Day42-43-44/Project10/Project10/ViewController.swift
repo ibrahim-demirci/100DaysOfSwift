@@ -10,7 +10,6 @@ import UIKit
 class ViewController: UICollectionViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     var people = [Person]()
-    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -71,19 +70,31 @@ class ViewController: UICollectionViewController, UIImagePickerControllerDelegat
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let person = people[indexPath.item]
 
-        let ac = UIAlertController(title: "Rename person", message: nil, preferredStyle: .alert)
-        ac.addTextField()
+        let acAsk = UIAlertController(title: "Delete or Rename", message: "What do you want?", preferredStyle: .alert)
+        
+        acAsk.addAction(UIAlertAction(title: "Rename", style: .default, handler: {[weak self] _ in
+            let ac = UIAlertController(title: "Rename person", message: nil, preferredStyle: .alert)
+            ac.addTextField()
 
-        ac.addAction(UIAlertAction(title: "Cancel", style: .cancel))
+            ac.addAction(UIAlertAction(title: "Cancel", style: .cancel))
 
-        ac.addAction(UIAlertAction(title: "OK", style: .default) { [weak self, weak ac] _ in
-            guard let newName = ac?.textFields?[0].text else { return }
-            person.name = newName
+            ac.addAction(UIAlertAction(title: "OK", style: .default) { [weak self, weak ac] _ in
+                guard let newName = ac?.textFields?[0].text else { return }
+                person.name = newName
 
+                self?.collectionView.reloadData()
+            })
+            self?.present(ac, animated: true)
+        }))
+        
+        acAsk.addAction(UIAlertAction(title: "Delete", style: .default, handler: { [weak self] _ in
+            self?.people.remove(at: indexPath.item)
             self?.collectionView.reloadData()
-        })
-
-        present(ac, animated: true)
+        }))
+        
+        present(acAsk, animated: true)
+        
+        
     }
 
     func getDocumentsDirectory() -> URL {
