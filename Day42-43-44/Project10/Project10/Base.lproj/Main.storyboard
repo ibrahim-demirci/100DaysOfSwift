@@ -45,6 +45,7 @@
                                     </subviews>
                                 </collectionViewCellContentView>
                                 <color key="backgroundColor" systemColor="systemTealColor"/>
+                                <rect key="contentStretch" x="1" y="0.0" width="1" height="1"/>
                                 <connections>
                                     <outlet property="imageView" destination="DN9-y0-21F" id="DRR-DV-4zV"/>
                                     <outlet property="name" destination="Bsa-mc-K1i" id="ptz-EG-yt8"/>
