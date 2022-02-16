@@ -67,7 +67,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         if let touch = touches.first {
             let location = touch.location(in: self)
-
+            
             let objects = nodes(at: location)
 
             if objects.contains(editLabel) {
@@ -86,6 +86,10 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                     addChild(box)
                     
                     } else {
+                        if location.y < 600 {
+                            return
+                        }
+                        
                         let randomBallColor = ballColors.randomElement()
                         let ball = SKSpriteNode(imageNamed: "ball\(randomBallColor!)")
                         ball.physicsBody = SKPhysicsBody(circleOfRadius: ball.size.width / 2.0)
