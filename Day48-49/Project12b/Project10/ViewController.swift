@@ -13,6 +13,18 @@ class ViewController: UICollectionViewController, UIImagePickerControllerDelegat
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let defaults = UserDefaults.standard
+
+        if let savedPeople = defaults.object(forKey: "people") as? Data {
+            let jsonDecoder = JSONDecoder()
+
+            do {
+                people = try jsonDecoder.decode([Person].self, from: savedPeople)
+            } catch {
+                print("Failed to load people")
+            }
+        }
         navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addNewPerson))
 
     }
@@ -63,7 +75,7 @@ class ViewController: UICollectionViewController, UIImagePickerControllerDelegat
         let person = Person(name: "Unknown", image: imageName)
         people.append(person)
         collectionView.reloadData()
-
+        save()
         dismiss(animated: true)
     }
     
@@ -81,8 +93,9 @@ class ViewController: UICollectionViewController, UIImagePickerControllerDelegat
             ac.addAction(UIAlertAction(title: "OK", style: .default) { [weak self, weak ac] _ in
                 guard let newName = ac?.textFields?[0].text else { return }
                 person.name = newName
-
+                
                 self?.collectionView.reloadData()
+                self?.save()
             })
             self?.present(ac, animated: true)
         }))
@@ -90,6 +103,7 @@ class ViewController: UICollectionViewController, UIImagePickerControllerDelegat
         acAsk.addAction(UIAlertAction(title: "Delete", style: .default, handler: { [weak self] _ in
             self?.people.remove(at: indexPath.item)
             self?.collectionView.reloadData()
+            
         }))
         
         present(acAsk, animated: true)
@@ -100,6 +114,16 @@ class ViewController: UICollectionViewController, UIImagePickerControllerDelegat
     func getDocumentsDirectory() -> URL {
         let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
         return paths[0]
+    }
+    
+    func save() {
+        let jsonEncoder = JSONEncoder()
+        if let savedData = try? jsonEncoder.encode(people) {
+            let defaults = UserDefaults.standard
+            defaults.set(savedData, forKey: "people")
+        } else {
+            print("Failed to save people.")
+        }
     }
 }
 
