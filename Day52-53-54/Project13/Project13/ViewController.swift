@@ -62,13 +62,13 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     
     @IBAction func changeFilter(_ sender: Any) {
         let ac = UIAlertController(title: "Choose filter", message: nil, preferredStyle: .actionSheet)
-        ac.addAction(UIAlertAction(title: "CIBumpDistortion", style: .default, handler: setFilter))
-        ac.addAction(UIAlertAction(title: "CIGaussianBlur", style: .default, handler: setFilter))
-        ac.addAction(UIAlertAction(title: "CIPixellate", style: .default, handler: setFilter))
-        ac.addAction(UIAlertAction(title: "CISepiaTone", style: .default, handler: setFilter))
-        ac.addAction(UIAlertAction(title: "CITwirlDistortion", style: .default, handler: setFilter))
-        ac.addAction(UIAlertAction(title: "CIUnsharpMask", style: .default, handler: setFilter))
-        ac.addAction(UIAlertAction(title: "CIVignette", style: .default, handler: setFilter))
+        ac.addAction(UIAlertAction(title: "BumpDistortion", style: .default, handler: setFilter))
+        ac.addAction(UIAlertAction(title: "GaussianBlur", style: .default, handler: setFilter))
+        ac.addAction(UIAlertAction(title: "Pixellate", style: .default, handler: setFilter))
+        ac.addAction(UIAlertAction(title: "SepiaTone", style: .default, handler: setFilter))
+        ac.addAction(UIAlertAction(title: "TwirlDistortion", style: .default, handler: setFilter))
+        ac.addAction(UIAlertAction(title: "UnsharpMask", style: .default, handler: setFilter))
+        ac.addAction(UIAlertAction(title: "Vignette", style: .default, handler: setFilter))
         ac.addAction(UIAlertAction(title: "Cancel", style: .cancel))
         present(ac, animated: true)
     }
@@ -99,7 +99,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         // safely read the alert action's title
         guard let actionTitle = action.title else { return }
 
-        currentFilter = CIFilter(name: actionTitle)
+        currentFilter = CIFilter(name: "CI\(actionTitle)")
 
         let beginImage = CIImage(image: currentImage)
         currentFilter.setValue(beginImage, forKey: kCIInputImageKey)
