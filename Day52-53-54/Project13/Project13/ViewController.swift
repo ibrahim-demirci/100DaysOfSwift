@@ -51,7 +51,11 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     }
 
     @IBAction func save(_ sender: Any) {
-        guard let image = imageView.image else { return }
+        guard let image = imageView.image else {
+            let ac = UIAlertController(title: "No Image", message: nil, preferredStyle: .alert)
+            ac.addAction(UIAlertAction(title: "Cancel", style: .default, handler: nil))
+            present(ac,animated: true)
+            return }
 
         UIImageWriteToSavedPhotosAlbum(image, self, #selector(image(_:didFinishSavingWithError:contextInfo:)), nil)
     }
