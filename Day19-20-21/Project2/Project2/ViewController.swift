@@ -51,15 +51,23 @@ class ViewController: UIViewController {
     }
     
     @IBAction func buttonTapped(_ sender: UIButton) {
-        if sender.tag == correctAnswer {
-            score += 1
-            presentCorrectAlert()
-            
-        } else {
-            score -= 1
-            presentWrongAlert(tag: sender.tag)
-            
+        UIView.animate(withDuration: 0.1, delay: 0, options: []) {
+            sender.transform = CGAffineTransform(translationX: 2, y: 1)
+           
+        } completion: { _ in
+            sender.transform = .identity
+            if sender.tag == self.correctAnswer {
+                self.score += 1
+                self.presentCorrectAlert()
+                
+            } else {
+                self.score -= 1
+                self.presentWrongAlert(tag: sender.tag)
+                
+            }
         }
+
+        
     }
     
     
