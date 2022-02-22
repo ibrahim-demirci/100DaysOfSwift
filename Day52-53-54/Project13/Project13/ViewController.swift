@@ -66,7 +66,8 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
             ac.addAction(UIAlertAction(title: "Cancel", style: .default, handler: nil))
             present(ac,animated: true)
             return }
-
+        
+        
         UIImageWriteToSavedPhotosAlbum(image, self, #selector(image(_:didFinishSavingWithError:contextInfo:)), nil)
     }
     
