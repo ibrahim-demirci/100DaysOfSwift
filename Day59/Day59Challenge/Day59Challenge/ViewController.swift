@@ -13,6 +13,7 @@ class ViewController: UITableViewController {
     private var activityIndicator: UIActivityIndicatorView!
 
     var countries = [Datum]()
+    var cityDetails = [PopulationCount]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -50,11 +51,18 @@ class ViewController: UITableViewController {
             guard let data = response.value else {
                 completion([])
                 return }
-                
                 completion(data.data)
-            
-            
         }
+        
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let storybard = UIStoryboard(name: "Main", bundle: nil)
+        let vc = storybard.instantiateViewController(withIdentifier: "DetailVC") as! DetailTableViewController
+        
+        vc.cityInformations = countries[indexPath.row].populationCounts
+        navigationController?.pushViewController(vc, animated: true)
+        
         
         
     }

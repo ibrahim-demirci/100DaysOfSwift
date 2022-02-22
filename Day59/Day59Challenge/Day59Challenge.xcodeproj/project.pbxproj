@@ -15,6 +15,7 @@
 		0A4BC96A27C4425600A54488 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0A4BC96827C4425600A54488 /* LaunchScreen.storyboard */; };
 		0A4BC97227C443AD00A54488 /* CountryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A4BC97127C443AD00A54488 /* CountryModel.swift */; };
 		0A4BC97527C44B7C00A54488 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 0A4BC97427C44B7C00A54488 /* Alamofire */; };
+		0A4BC97727C52AF600A54488 /* DetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A4BC97627C52AF600A54488 /* DetailTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +28,7 @@
 		0A4BC96927C4425600A54488 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0A4BC96B27C4425600A54488 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0A4BC97127C443AD00A54488 /* CountryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryModel.swift; sourceTree = "<group>"; };
+		0A4BC97627C52AF600A54488 /* DetailTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +65,7 @@
 				0A4BC95D27C4425500A54488 /* AppDelegate.swift */,
 				0A4BC95F27C4425500A54488 /* SceneDelegate.swift */,
 				0A4BC96127C4425500A54488 /* ViewController.swift */,
+				0A4BC97627C52AF600A54488 /* DetailTableViewController.swift */,
 				0A4BC97127C443AD00A54488 /* CountryModel.swift */,
 				0A4BC96327C4425500A54488 /* Main.storyboard */,
 				0A4BC96627C4425600A54488 /* Assets.xcassets */,
@@ -150,6 +153,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0A4BC96227C4425500A54488 /* ViewController.swift in Sources */,
+				0A4BC97727C52AF600A54488 /* DetailTableViewController.swift in Sources */,
 				0A4BC95E27C4425500A54488 /* AppDelegate.swift in Sources */,
 				0A4BC97227C443AD00A54488 /* CountryModel.swift in Sources */,
 				0A4BC96027C4425500A54488 /* SceneDelegate.swift in Sources */,
