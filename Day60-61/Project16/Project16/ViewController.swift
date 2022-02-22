@@ -14,7 +14,7 @@ class ViewController: UIViewController, MKMapViewDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+            
         mapView.delegate = self
 
         let london = Capital(title: "London", coordinate: CLLocationCoordinate2D(latitude: 51.507222, longitude: -0.1275), info: "Home to the 2012 Summer Olympics.")
@@ -24,7 +24,31 @@ class ViewController: UIViewController, MKMapViewDelegate {
         let washington = Capital(title: "Washington DC", coordinate: CLLocationCoordinate2D(latitude: 38.895111, longitude: -77.036667), info: "Named after George himself.")
 
         mapView.addAnnotations([london, oslo, paris, rome, washington])
-
+        
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Style", style: .plain, target: self, action: #selector(selectMapStyle))
+        
+    }
+    
+    @objc func selectMapStyle() {
+        let ac = UIAlertController(title: "Select Style", message: nil, preferredStyle: .actionSheet)
+        ac.addAction(UIAlertAction(title: "Satellite", style: .default, handler: { [weak self] ac in
+            self?.mapView.mapType = .satellite
+        }))
+        ac.addAction(UIAlertAction(title: "Standart", style: .default, handler: { [weak self] ac in
+            self?.mapView.mapType = .standard
+        }))
+        ac.addAction(UIAlertAction(title: "Hybrit", style: .default, handler: { [weak self] ac in
+            self?.mapView.mapType = .hybrid
+        }))
+        ac.addAction(UIAlertAction(title: "HybridFlyover", style: .default, handler: { [weak self] ac in
+            self?.mapView.mapType = .hybridFlyover
+        }))
+        ac.addAction(UIAlertAction(title: "MutedStandart", style: .default, handler: { [weak self] ac in
+            self?.mapView.mapType = .mutedStandard
+        }))
+        ac.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        
+        present(ac,animated: true)
     }
 
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
