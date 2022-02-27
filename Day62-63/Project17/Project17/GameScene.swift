@@ -12,6 +12,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     let possibleEnemies = ["ball", "hammer", "tv"]
     var isGameOver = false
     var gameTimer: Timer?
+    var timerValue = 1.0
+    var enemyCount = 0
     
     var starfield: SKEmitterNode!
     var player: SKSpriteNode!
@@ -49,7 +51,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         physicsWorld.gravity = CGVector(dx: 0, dy: 0)
         physicsWorld.contactDelegate = self
         
-        gameTimer = Timer.scheduledTimer(timeInterval: 0.35, target: self, selector: #selector(createEnemy), userInfo: nil, repeats: true)
+        gameTimer = Timer.scheduledTimer(timeInterval: timerValue, target: self, selector: #selector(createEnemy), userInfo: nil, repeats: true)
 
     }
     
@@ -73,12 +75,20 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     override func update(_ currentTime: TimeInterval) {
         for node in children {
             if node.position.x < -300 {
+                enemyCount += 1
                 node.removeFromParent()
             }
         }
 
         if !isGameOver {
             score += 1
+        }
+        
+        if enemyCount > 5 {
+            enemyCount = 0
+            timerValue -= 0.1
+            gameTimer?.invalidate()
+            gameTimer = Timer.scheduledTimer(timeInterval: timerValue, target: self, selector: #selector(createEnemy), userInfo: nil, repeats: true)
         }
     }
     
@@ -94,14 +104,15 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
 
         player.position = location
     }
-    
+
+
     func didBegin(_ contact: SKPhysicsContact) {
         let explosion = SKEmitterNode(fileNamed: "explosion")!
         explosion.position = player.position
         addChild(explosion)
 
         player.removeFromParent()
-
+        gameTimer?.invalidate()
         isGameOver = true
     }
 }
