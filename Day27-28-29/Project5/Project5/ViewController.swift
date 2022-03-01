@@ -60,6 +60,8 @@ class ViewController: UITableViewController {
     }
     
     func submit(answer: String) {
+        
+        assert(answer.count < 6, "More than 6")
         let lowerAnswer = answer.lowercased()
 
         if isLonger(word: lowerAnswer){
